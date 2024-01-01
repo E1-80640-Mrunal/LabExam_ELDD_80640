@@ -11,7 +11,7 @@ char op[30];
 
 
 int size = MAX;
-module_param(size,int, 0444);
+module_param(size,int, 0644);
 
 static __init int export_init(void)
 {
