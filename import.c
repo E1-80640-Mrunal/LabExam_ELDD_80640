@@ -1,4 +1,6 @@
 #include<linux/module.h>
+#include"import.h"
+
 
 static __init int import_init(void)
 {
