@@ -4,7 +4,8 @@
 #include<linux/kfifo.h>
 
 #define MAX 32
-
-extern struct kfifo my_fifo;
+int kfifo_size;
+int kfifo_len;
+int kfifo_avail;
 
 #endif
