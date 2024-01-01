@@ -1,4 +1,4 @@
-#include<linux/kernel.h>
+#include<linux/module.h>
 
 
 static __init int export_init(void)
@@ -19,4 +19,4 @@ module_exit(export_exit);
 //module information
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Mrunal Patwardhan");
-MOODULE_DESCRIPTION("LabExam_ELDD export module");
+MODULE_DESCRIPTION("LabExam_ELDD export module");

@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "typeinfo": "c",
+        "cdev.h": "c",
+        "mutex.h": "c"
+    }
+}
