@@ -36,6 +36,11 @@ static __exit void export_exit(void)
 module_init(export_init);
 module_exit(export_exit);
 
+//export symbols
+EXPORT_SYMBOL(kfifo_size);
+EXPORT_SYMBOL(kfifo_len);
+EXPORT_SYMBOL(kfifo_avail);
+
 //module information
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Mrunal Patwardhan");
