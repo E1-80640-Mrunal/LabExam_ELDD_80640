@@ -1,5 +1,6 @@
 #include<linux/module.h>
 #include"import.h"
+#include<linux/moduleparam.h>
 
 //variables
 struct kfifo my_fifo;
@@ -16,7 +17,7 @@ static __init int export_init(void)
 {
     int ret;
     printk(KERN_INFO "%s: export_init() called.\n", THIS_MODULE -> name);
-    ret = kfifo_alloc(&my_fifo, MAX, GFP_KERNEL);
+    ret = kfifo_alloc(&my_fifo, size, GFP_KERNEL);
 	if(ret < 0)
 	{
 		printk(KERN_ERR "%s: kfifo_alloc() is failed\n", THIS_MODULE->name);
@@ -55,12 +56,12 @@ void kfifo_push(char *ch, int s)
 
 char * kfifo_pop(int s)
 {
-    my_kfifo_size = kfifo_size(&my_fifo);
-    my_kfifo_len = kfifo_len(&my_fifo);
-    my_kfifo_avail = kfifo_avail(&my_fifo);
     int ret;
     ret = kfifo_out(&my_fifo, op, s);
     printk(KERN_INFO "%s: bytes read from kfifo : %d\n", THIS_MODULE->name, ret);
+    my_kfifo_size = kfifo_size(&my_fifo);
+    my_kfifo_len = kfifo_len(&my_fifo);
+    my_kfifo_avail = kfifo_avail(&my_fifo);
     return op;
 }
 

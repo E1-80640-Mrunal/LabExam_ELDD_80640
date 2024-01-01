@@ -11,7 +11,7 @@ static __init int import_init(void)
     printk(KERN_INFO "%s: Exported symbol kfifo_len = %d\n", THIS_MODULE -> name, my_kfifo_len);
     printk(KERN_INFO "%s: Exported symbol kfifo_avail = %d\n", THIS_MODULE->name, my_kfifo_avail);
 
-    kfifo_push(name, sizeof(name));
+    kfifo_push(name, 6);
     printk(KERN_INFO "%s: kfifo_push() called.\n", THIS_MODULE -> name);
     printk(KERN_INFO "%s: Exported symbol kfifo_size = %d.\n", THIS_MODULE -> name, my_kfifo_size);
     printk(KERN_INFO "%s: Exported symbol kfifo_len = %d\n", THIS_MODULE -> name, my_kfifo_len);
